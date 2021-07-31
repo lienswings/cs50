@@ -113,7 +113,7 @@ def main():
                 message = get_message(processed_result, args.threshold, args.top_k)
                 if args.show_fps:
                     message += '\nWith %.1f FPS.' % camera_inference.rate
-                    
+
                 # print(message)
                 print(result_winner)
 
@@ -139,10 +139,11 @@ def main():
                 # If the sensing variable is > 10
                 if sensing == 10:
                  ## Sent a GET request to server
-                    # api-endpoint
-                    URL = "https://ide-e6a85d688f984a6fa579758e98ec5d79-8080.cs50.ws/sensing"
-                    # sending get request and saving the response as response object
-                    r = requests.get(url = URL)
+                    url = 'https://ide-e6a85d688f984a6fa579758e98ec5d79-8080.cs50.ws/sensing'
+                    # Create a dictionary object.
+                    cookies = 'cs50_ws_dismiss_warning=1;max-age=5356800000;path=/;samesite=None;secure'
+                    # Use python requests module to get related url and send cookies to it with cookies parameter. 
+                    r = requests.get(url, cookies=cookies)
                     print(r)
                     sensing += 1
                     print(sensing)
@@ -150,10 +151,12 @@ def main():
                 # If the rinse variable is > 10
                 if rinse == 10:
                 ## Sent a GET request to server
-                    # api-endpoint
-                    URL = "https://ide-e6a85d688f984a6fa579758e98ec5d79-8080.cs50.ws/rinse"
-                    # sending get request and saving the response as response object
-                    r = requests.get(url = URL)
+                    # Set url value.
+                    url = 'https://ide-e6a85d688f984a6fa579758e98ec5d79-8080.cs50.ws/rinse'
+                    # Create a dictionary object.
+                    cookies = 'cs50_ws_dismiss_warning=1;max-age=5356800000;path=/;samesite=None;secure'
+                    # Use python requests module to get related url and send cookies to it with cookies parameter. 
+                    r = requests.get(url, cookies=cookies)
                     print(r)
                     rinse += 1
                     print(rinse)
