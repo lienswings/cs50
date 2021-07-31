@@ -147,7 +147,6 @@ def main():
                     r = requests.get(url, cookies=cookies)
                     print(r)
                     sensing += 1
-                    print(sensing)
 
                 # If the rinse variable is > 10
                 if rinse == 10:
@@ -160,7 +159,6 @@ def main():
                     r = requests.get(url, cookies=cookies)
                     print(r)
                     rinse += 1
-                    print(rinse)
 
         if args.preview:
             camera.stop_preview()
