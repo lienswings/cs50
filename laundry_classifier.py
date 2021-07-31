@@ -130,12 +130,13 @@ def main():
                 ## Increment the sensing variable by 1
                 if result_winner == 'sensing':
                     sensing += 1
-                    
+                    print('Detected sensing')
 
                 # If 'rinse' is in the result_winner tuple
                 ## Increment the rinse variable by 1
                 if result_winner == 'rinse':
                     rinse += 1
+                    print('Detected rinse')
 
                 # If the sensing variable is > 10
                 if sensing == 10:
