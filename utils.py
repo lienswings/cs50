@@ -4,7 +4,7 @@ import os
 
 
 def _path(filename):
-    return filename
+    return os.path.filename
 
 
 def load_compute_graph(filename):
