@@ -115,7 +115,7 @@ def main():
                     message += '\nWith %.1f FPS.' % camera_inference.rate
 
                 # print(message)
-                print(result_winner)
+                print(f'Detected: {result_winner}')
 
                 if args.preview:
                     camera.annotate_foreground = Color('black')
@@ -128,13 +128,13 @@ def main():
                 ## Increment the sensing variable by 1
                 if result_winner == 'sensing':
                     sensing += 1
-                    print(sensing)
+                    # print(sensing)
 
                 # If 'rinse' is in the result_winner tuple
                 ## Increment the rinse variable by 1
                 if result_winner == 'rinse':
                     rinse += 1
-                    print(rinse)
+                    # print(rinse)
 
                 # If the sensing variable is > 10
                 if sensing == 10:
