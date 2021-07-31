@@ -153,7 +153,7 @@ def main():
                     # Set url value.
                     url = 'https://ide-e6a85d688f984a6fa579758e98ec5d79-8080.cs50.ws/rinse'
                     # Create a dictionary object.
-                    cookies = {'cs50_ws_dismiss_warning': '1', 'max-age': '5356800000', 'path'=: '/', 'samesite': 'None', 'secure',}
+                    cookies = {'cs50_ws_dismiss_warning': '1', 'max-age': '5356800000', 'path': '/', 'samesite': 'None', 'secure',}
                     # Use python requests module to get related url and send cookies to it with cookies parameter. 
                     r = requests.get(url, cookies=cookies)
                     print(r)
