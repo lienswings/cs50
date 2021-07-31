@@ -116,8 +116,6 @@ def main():
                     
                 # print(message)
                 print(result_winner)
-                print(sensing)
-                print(rinse)
 
                 if args.preview:
                     camera.annotate_foreground = Color('black')
@@ -130,13 +128,13 @@ def main():
                 ## Increment the sensing variable by 1
                 if result_winner == 'sensing':
                     sensing += 1
-                    print('Detected sensing')
+                    print(sensing)
 
                 # If 'rinse' is in the result_winner tuple
                 ## Increment the rinse variable by 1
                 if result_winner == 'rinse':
                     rinse += 1
-                    print('Detected rinse')
+                    print(rinse)
 
                 # If the sensing variable is > 10
                 if sensing == 10:
@@ -145,7 +143,9 @@ def main():
                     URL = "https://ide-e6a85d688f984a6fa579758e98ec5d79-8080.cs50.ws/sensing"
                     # sending get request and saving the response as response object
                     r = requests.get(url = URL)
+                    print(r)
                     sensing += 1
+                    print(sensing)
 
                 # If the rinse variable is > 10
                 if rinse == 10:
@@ -154,7 +154,9 @@ def main():
                     URL = "https://ide-e6a85d688f984a6fa579758e98ec5d79-8080.cs50.ws/rinse"
                     # sending get request and saving the response as response object
                     r = requests.get(url = URL)
+                    print(r)
                     rinse += 1
+                    print(rinse)
 
         if args.preview:
             camera.stop_preview()
