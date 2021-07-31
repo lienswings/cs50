@@ -57,10 +57,9 @@ def process_winner(result, labels, tensor_name, threshold):
     assert shape.depth == len(labels)
     pairs = [pair for pair in enumerate(probs) if pair[1] > threshold]
     pairs = sorted(pairs, key=lambda pair: pair[1], reverse=True)
-    pairs = pairs[0]
-    # Adjusted to only return the label name of the winner in the tuple
-    return ['%s' % labels[index] for index, prob in pairs]
-
+    winner = pairs[0]
+    # Adjusted to only return the label name of the winner
+    return labels[winner[0]]
 
 def main():
     parser = argparse.ArgumentParser()
