@@ -128,13 +128,13 @@ def main():
 
                 # If 'sensing' is in the result_winner tuple
                 ## Increment the sensing variable by 1
-                if result_winner[0] == 'sensing':
+                if result_winner == 'sensing':
                     sensing += 1
                     
 
                 # If 'rinse' is in the result_winner tuple
                 ## Increment the rinse variable by 1
-                if result_winner[0] == 'rinse':
+                if result_winner == 'rinse':
                     rinse += 1
 
                 # If the sensing variable is > 10
