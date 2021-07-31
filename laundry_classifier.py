@@ -109,10 +109,15 @@ def main():
                 result_winner = process_winner(result, labels, args.output_layer,
                                            args.threshold)
 
+
                 message = get_message(processed_result, args.threshold, args.top_k)
                 if args.show_fps:
                     message += '\nWith %.1f FPS.' % camera_inference.rate
-                print(message)
+                    
+                # print(message)
+                print(result_winner)
+                print(sensing)
+                print(rinse)
 
                 if args.preview:
                     camera.annotate_foreground = Color('black')
@@ -125,6 +130,7 @@ def main():
                 ## Increment the sensing variable by 1
                 if result_winner[0] == 'sensing':
                     sensing += 1
+                    
 
                 # If 'rinse' is in the result_winner tuple
                 ## Increment the rinse variable by 1
