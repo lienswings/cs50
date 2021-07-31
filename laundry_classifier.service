@@ -11,7 +11,7 @@ Restart=no
 User=pi
 Environment=AIY_BOARD_NAME=AIY-Board
 EnvironmentFile=-/run/aiy-board-info
-ExecStart=/usr/bin/python3 /home/pi/finalproject/laundry_classifier.py --enable_streaming --mdns_name "${AIY_BOARD_NAME}" --blink_on_error
+ExecStart=/usr/bin/python3 /home/pi/finalproject/laundry_classifier.py --model_path ~/training_data/retrained_graph.binaryproto   --label_path ~/training_data/retrained_labels.txt   --input_height 160   --input_width 160   --input_layer input   --threshold 0.9   --output_layer final_result   --preview  --enable_streaming --mdns_name "${AIY_BOARD_NAME}" --blink_on_error
 
 [Install]
 WantedBy=multi-user.target
