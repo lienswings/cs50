@@ -141,7 +141,7 @@ def main():
                  ## Sent a GET request to server
                     url = 'https://ide-e6a85d688f984a6fa579758e98ec5d79-8080.cs50.ws/sensing'
                     # Create a dictionary object.
-                    cookies = 'cs50_ws_dismiss_warning=1;max-age=5356800000;path=/;samesite=None;secure'
+                    cookies = dict(cs50_ws_dismiss_warning='1', max-age='5356800000', path='/', samesite='None')
                     # Use python requests module to get related url and send cookies to it with cookies parameter. 
                     r = requests.get(url, cookies=cookies)
                     print(r)
